@@ -1,0 +1,10 @@
+{
+  "aiId": "Jomok",
+  "learning": true,
+  "learningRule": {
+    "description": "같은 상황에서 플레이어가 선택한 수의 빈도를 기록합니다. 가장 많이 선택된 수를 따르고, 동률이면 무작위로 선택합니다.",
+    "tieBreak": "random",
+    "fallback": "random"
+  },
+  "positions": {}
+}

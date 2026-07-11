@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "오목크라이스트에서 사용할 AI 목록과 학습 데이터 경로",
+  "ais": [
+    {
+      "id": "Jomok",
+      "name": "제이오목",
+      "folder": "AI/Jomok",
+      "dataPath": "AI/Jomok/aidata.json",
+      "learning": true,
+      "status": "active",
+      "description": "플레이어의 수를 기록하고 자주 선택된 수를 우선하는 학습형 AI"
+    }
+  ]
+}
