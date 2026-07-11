@@ -75,7 +75,7 @@ async function aiMove() {
   if (move) placeStone(move.x, move.y, 'white');
 }
 function saveApiKey() { const input = document.querySelector('#ai-api-key'); const key = input?.value.trim(); if (!key) { localStorage.removeItem('omokchrist_ai_api_key'); setApiStatus('API 키를 지웠습니다. 키가 없으면 기본 모드로 작동합니다.'); return; } localStorage.setItem('omokchrist_ai_api_key', key); input.value = ''; setApiStatus('API 키 저장 완료 · 다음 AI 차례부터 사용합니다.'); }
-function initApiKey() { const input = document.querySelector('#ai-api-key'); if (!input) return; if (getApiKey()) setApiStatus('API 키가 저장되어 있습니다.'); document.querySelector('#save-api-key')?.addEventListener('click', saveApiKey); input.addEventListener('keydown', event => { if (event.key === 'Enter') saveApiKey(); }); }
+function initApiKey() { const input = document.querySelector('#ai-api-key'); if (!input) return; if (getApiKey()) setApiStatus('API 키가 저장되어 있습니다.'); document.querySelector('#save-api-key')?.addEventListener('click', saveApiKey); input.addEventListener('paste', () => window.setTimeout(saveApiKey, 0)); input.addEventListener('keydown', event => { if (event.key === 'Enter') saveApiKey(); }); }
 function toggleLearning() { aiLearning = !aiLearning; const label = document.querySelector('#learning-label'); const button = document.querySelector('#learning-toggle'); if(label) label.textContent = aiLearning ? '학습 중' : '학습 꺼짐'; if(button) button.classList.toggle('is-off', !aiLearning); }
 createBoard();
 initApiKey();
