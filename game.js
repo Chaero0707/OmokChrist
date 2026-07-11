@@ -5,6 +5,9 @@ let board = Array.from({ length: BOARD_SIZE }, () => Array(BOARD_SIZE).fill(null
 let current = 'black';
 let gameOver = false;
 let aiLearning = true;
+let aiThinking = false;
+const AI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const AI_MODEL = 'gpt-4o-mini';
 const stats = { black: 0, white: 0 };
 
 function createBoard() {
